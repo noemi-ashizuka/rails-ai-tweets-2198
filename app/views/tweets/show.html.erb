@@ -1,0 +1,7 @@
+<div class="container mt-3">
+  <strong>Tweet (<%= @tweet.shortened.size %>):</strong>
+  <blockquote class="blockquote"><%= @tweet.shortened %></blockquote>
+
+  <strong>Original:</strong>
+  <%= simple_format @tweet.long %>
+</div>

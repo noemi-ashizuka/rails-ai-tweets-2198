@@ -1,0 +1,6 @@
+<div class="container mt-3">
+  <%= simple_form_for @tweet do |f| %>
+    <%= f.input :long, placeholder: "Paste your long text", required: true %>
+    <%= f.button :submit, "Create Tweet", class: "btn btn-danger" %>
+  <% end %>
+</div>
