@@ -1,0 +1,7 @@
+<div id="<%= dom_id(tweet) %>" class="mb-4 mt-2 d-flex flex-column align-items-center justify-items-center">
+  <% if tweet.photo.attached? %>
+    <%= cl_image_tag tweet.photo.key, height: 300, width: 400, crop: :fill, class: "rounded-5" %>
+  <% else %>
+    <p class="text-muted">Generating image...</p>
+  <% end %>
+</div>

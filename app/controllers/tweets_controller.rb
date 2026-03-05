@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
-    @tweet.shortened = RubyLLM.chat.with_temperature(1.2).ask("Generate an unhinged tweet from this text: #{@tweet.long}").content
+    @tweet.shortened = RubyLLM.chat.with_temperature(0.8).ask("Generate an unhinged tweet from this text: #{@tweet.long}").content
     if @tweet.save
       redirect_to tweet_path(@tweet), notice: "Tweet successfully created"
     else

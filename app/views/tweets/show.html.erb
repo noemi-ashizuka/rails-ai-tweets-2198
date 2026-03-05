@@ -1,13 +1,11 @@
+<%= turbo_stream_from @tweet %>
+
 <div class="container mt-3">
-  <div class="mb-4 mt-2 d-flex flex-column align-items-center justify-items-center">
-    <% if @tweet.photo.attached? %>
-      <%= cl_image_tag @tweet.photo.key, height: 300, width: 400, crop: :fill, class: "rounded-5" %>
-    <% end %>
-  </div>
-  <strong>Tweet (<%= @tweet.shortened.size %>):</strong>
-  <blockquote class="blockquote"><%= @tweet.shortened %></blockquote>
+  <%= render "photo", tweet: @tweet %>
+<strong>Tweet (<%= @tweet.shortened.size %>):</strong>
+<blockquote class="blockquote"><%= @tweet.shortened %></blockquote>
 
 
-  <strong>Original:</strong>
+<strong>Original:</strong>
   <%= simple_format @tweet.long %>
 </div>
